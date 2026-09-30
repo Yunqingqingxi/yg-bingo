@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "yg_bingo",
+	"version": "${version}",
+	"name": "yunxigames Bingo",
+	"description": "物品与击杀双板集卡：发地图、集目标、连线条目给奖励。",
+	"authors": [
+		"Yunqingqingxi"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.yunxigames.YunxiGamesBingo"
+		]
+	},
+	"depends": {
+		"fabricloader": "~0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
