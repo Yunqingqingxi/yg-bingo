@@ -1,6 +1,8 @@
 package com.yunxigames;
 
+import com.yunxigames.command.BingoCommand;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,10 @@ public class YunxiGamesBingo implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		BingoConfig.load();
+
+		// 游戏内命令：/yg bingo on|off|status（同时切物品板与击杀板）
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
+				BingoCommand.register(dispatcher));
 
 		Bingos.register();
 
